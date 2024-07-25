@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/app.css">
+		<!--<link media="screen and (min-width: 475px)" rel="stylesheet" href="css/desktop.css">-->
+		<link rel="stylesheet" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans">
+		<link rel="icon" href="images/favicon-32x32.png">
+		<script src="js/app.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<section class="body">
+			<section class="input">
+				<section>
+					<header>
+						<h1>Mortgage Calculator</h1>
+						<span class="clear" onclick="clearAll()">Clear All</span>
+						<a href="#result" class="toResult"></a>
+					</header>
+					
+					<div class="inputField" id="amount">
+						<span class="detail">Mortage Amount</span>
+						<div>
+							<input type="number" class="amount" onfocus="returnState(this)" onblur="returnUnitState(this)", oninput="checkValLength(this, 10, 5000000)">
+							<span class="unit" id="amountUnit">£</span>
+						</div>
+						<span class="errorNote" id="amountErr">This field is required</span>
+					</div>
+					
+					
+					<div class="termRate" id="term">
+						<div class="inputField">
+							<span class="detail">Mortage Term</span>
+							<div>
+								<input type="number" class="term" onfocus="returnState(this)" onblur="returnUnitState(this)" oninput="checkValLength(this, 5, 50)">
+								<span class="unit" id="termUnit">years</span>
+							</div>
+							<span class="errorNote" id="termErr">This field is required</span>
+						</div>
+						
+						
+						<div class="inputField" id="rate">
+							<span class="detail">Interest Rate</span>
+							<div>
+								<input type="number" class="rate" onfocus="returnState(this)" onblur="returnUnitState(this)" oninput="checkValLength(this, 5, 100)">
+								<span class="unit" id="rateUnit">%</span>
+							</div>
+							<span class="errorNote" id="rateErr">This field is required</span>
+						</div>
+					</div>
+					
+					<div class="inputField" id="notPicked" name="radioBtn">
+						<span class="detail">Mortgage Type</span>
+						
+						<button class="radioInput" id="repayment" onclick="mortgageType(this)">
+							<span class="radio"><span></span></span>
+							<span>Repayment</span>
+						</button>
+						
+						<button class="radioInput" id="interest" onclick="mortgageType(this)">
+							<span class="radio"><span></span></span>
+							<span>Interest Only</span>
+						</button>
+						
+						<span class="errorNote" id="radioErr">This field is required</span>
+					</div>
+					
+					
+					<button class="calcBtn" onclick="calculateRepayment()">
+						<img src="images/icon-calculator.svg">
+						<span>Calculate Repayment</span>
+					</button>
+				</section>
+			</section>
+			
+			
+			
+			<section class="result">
+				<section>
+					<img src="images/illustration-empty.svg">
+					
+					<h1>Results shown here</h1>
+					
+					<p>Complete the form and click "calculate replayments" to see what your monthly repayments would be.</p>
+				</section>
+				
+				<section class="resultVal">
+					<h1>Your results</h1>
+					<p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate replayments" again.</p>
+					
+					<div>
+						<div>
+							<span>Your monthly replayments</span>
+							<p class="monthlyRepayment"></p>
+						</div>
+						
+						<div>
+							<span>Total you'll repay over the term</span>
+							<p class="totalRepayment"></p>
+						</div>
+					</div>
+					
+				</section>
+				
+				<div id="result"></div>
+			</section>
+		</section>
+		
+	</body>
+</html>
