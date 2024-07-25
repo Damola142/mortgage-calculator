@@ -1,0 +1,414 @@
+:root {
+	--lime: hsl(61, 70%, 52%);
+	--lime500: #f9fadf;
+	--red: hsl(4, 69%, 50%);
+	--white: hsl(0, 0%, 100%);
+	--slate100: hsl(202, 86%, 94%);
+	--slate300: hsl(203, 41%, 72%);
+	--slate500: hsl(200, 26%, 54%);
+	--slate700: hsl(200, 24%, 40%);
+	--slate900: hsl(202, 55%, 16%);
+	--slate: #0e242f;
+  }
+  
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+* {
+	color: var(--slate900);
+	padding: 0;
+	margin: 0;
+	font-family: Plus Jakarta Sans;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+}
+
+
+body {
+	background: var(--white);
+}
+
+
+section.input {
+	padding: 2rem 5%;
+}
+
+
+h1 {
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+
+
+span.clear {
+	color: var(--slate700);
+	margin: 12px 0 0;
+	width: 4rem;
+	font-size: 16px;
+	display: block;
+	text-decoration: underline;
+	cursor: pointer;
+	transition: opacity .3s;
+}
+
+
+span.clear:hover {
+	opacity: .7;
+}
+
+
+div.inputField {
+	margin: 1rem 0 0;
+}
+
+
+div.inputField span.detail {
+	color: var(--slate700);
+	font-size: 18px;
+	font-weight: 450;
+}
+
+
+div.inputField input {
+	padding: 0 0 0 1rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	height: 3rem;		width: 100%;
+	border: 1.5px solid var(--slate300);
+	border-radius: 5px;
+	cursor: pointer;
+	transition: border .2s;
+}
+
+
+div.inputField input:hover {
+	border-color: var(--slate700);
+}
+
+
+div.inputField input:focus {
+	border-color: var(--lime);
+}
+
+
+input.amount {
+	padding: 0 1rem 0 4rem!important;
+}
+
+
+div.inputField div {
+	margin: 8px 0 0;
+	position: relative;
+}
+
+
+div.inputField span.unit {
+	color: var(--slate700);
+	background: var(--slate100);
+	padding: 0 1rem;
+	height: 45px;
+	font-size: 1.2rem;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 1.7px;		right: 1.5px;
+	border-radius: 0 4px 4px 0;
+	transition: background .2s;
+}
+
+
+div.inputField input:focus + span.unit {
+	background: var(--lime)!important;
+}
+
+
+input.amount + span.unit {
+	left: 1.5px;		right: auto;
+	border-radius: 4px 0 0 4px;
+}
+
+
+
+
+
+div.inputField span.errorNote {
+	color: var(--red);
+	margin: 5px 0 0;
+	font-size: 13px;
+	display: none;
+}
+
+
+div.inputField button.radioInput {
+	background: transparent; var(--lime500);
+	margin: 10px 0 0;
+	padding: 0 1rem;
+	height: 3rem;		width: 100%;
+	display: flex;
+	align-items: center;
+	border: 1.5px solid var(--slate300);
+	border-radius: 5px;
+	text-align: left
+	transition:  border .2s;
+}
+
+
+div.inputField button.radioInput[name="selected"] {
+	background: var(--lime500);
+	border-color: var(--lime);
+}
+
+
+div.inputField button.radioInput:nth-of-type(2) {
+	margin: 8px 0 0;
+}
+
+
+div.inputField button.radioInput:hover {
+	border-color: var(--lime);
+}
+
+
+button.radioInput span.radio {
+	background: transparent;
+	height: 1.2rem;		width: 1.2rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 1.5px solid var(--slate300);
+	border-radius: 50%;
+}
+
+
+button.radioInput[name="selected"] span.radio {
+	border-color: var(--lime);
+}
+
+
+span.radio span {
+	background: transparent;
+	height: 11px;		width: 11px;
+	border-radius: 50%;
+}
+
+
+button.radioInput[name="selected"] span.radio span {
+	background: var(--lime);
+}
+
+
+span.radio + span {
+	color: var(--slate900);
+	background: transparent;
+	margin: 0 0 0 1rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+
+button.calcBtn {
+	background: var(--lime);
+	margin: 1.5rem 0 0;
+	padding: 0 21%;
+	font-size: 1.1rem;
+	font-weight: 600;
+	height: 3rem;		width: 100%;
+	border: none;
+	border-radius: 2rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transition: opacity .3s;
+}
+
+
+button.calcBtn:hover {
+	opacity: .7;
+}
+
+
+
+
+
+
+section.result {
+	background: var(--slate900);
+	padding: 2rem 5%;
+	text-align: center;
+}
+
+
+section.result section:nth-of-type(1) {
+	
+}
+
+
+section.result img {
+	margin: 0 auto;
+	display: block;
+	width: 55%;
+}
+
+
+section.result h1 {
+	color: var(--white);
+	font-size: 1.8rem;
+}
+
+
+section.result p {
+	color: var(--slate500);
+	margin: 1rem auto 0;
+	font-size: 1.05rem;
+	width: 90%;
+	line-height: 1.4rem;
+}
+
+
+section.result section:nth-of-type(2) {
+	display: none;
+	text-align: left;
+}
+
+
+section.result section:nth-of-type(2) p {
+	width: 100%;
+}
+
+
+section.resultVal p + div {
+	background: var(--slate);
+	padding: 1rem 5%;
+	margin: 1.8rem 0 0;
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0 -3px var(--lime);
+}
+
+
+section.resultVal p + div span {
+	color: var(--slate500);
+	font-size: 15px;
+	font-weight: 500;
+}
+
+
+section.resultVal p + div div:nth-of-type(1) p {
+	color: var(--lime);
+	margin: 1.5rem 0 0;
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+
+section.resultVal p + div div:nth-of-type(2) {
+	margin: 2.5rem 0 0;
+	padding: 1.8rem 0 0;
+	border-top: 2px solid var(--slate900);
+}
+
+
+section.resultVal p + div div:nth-of-type(2) p {
+	color: var(--slate100);
+	margin: 1rem 0 0;
+	font-size: 1.3rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+
+
+span#amountErr {
+	
+}
+
+
+
+
+/*Desktop*/
+@media (min-width: 425px) {
+	body {
+		background: var(--slate100);
+	}
+	
+	
+	section.body {
+		background: var(--white);
+		margin: 30% auto 0;
+		display: flex;
+		height: 38rem;		width: 100%;
+		max-width: 65rem;
+	}
+	
+	
+	section.input, section.result {
+		min-height: 100%;		width: 50%;
+		display: flex;
+		align-items: center;
+	}
+	
+	
+	section.result section {
+		width: 100%;
+		position: relative;
+		top: -2rem;
+	}
+	
+	
+	
+	section.result {
+		padding: 0 3%;
+		border-radius: 0 0 0 7rem;
+	}
+	
+	
+	section.result img {
+		margin: 0 auto 1rem;
+	}
+	
+	
+	section.result p {
+		width: 100%;
+	}
+	
+	
+	section.input header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	span.clear {
+		margin: 0;
+	}
+	
+	
+	div.termRate {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	div.termRate div.inputField {
+		width: 47%;
+	}
+	
+	
+	
+	
+	div.inputField {
+		margin: 1.5rem 0 0;
+	}
+	
+	
+	button.calcBtn {
+		margin: 2rem 0 0;
+	}
+	
+	
+  }
